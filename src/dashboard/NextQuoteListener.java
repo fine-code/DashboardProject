@@ -21,8 +21,8 @@ public class NextQuoteListener implements ActionListener{
 	private JFrame frame;
 	private static ArrayList<Quote> quotesList;
 	private static int quoteUpTo = 0;
-	private static String quoteType = "";
-	private static int likeQuoteUpTo = 0;
+	//private static String quoteType = "";
+	//private static int likeQuoteUpTo = 0;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -39,24 +39,12 @@ public class NextQuoteListener implements ActionListener{
 	}
 
 	private void displayQuote() {
-		Random random = new Random();
-		double d = random.nextDouble();
-		if(d < .15 && LikeListener.getLikeQuotes().size() != 0) {
-			displayLikeQuote();
-			likeQuoteUpTo++;
-			quoteType = "like";
-			if(likeQuoteUpTo > LikeListener.getLikeQuotes().size() -1) {
-				likeQuoteUpTo = 0;
-			}
-		}
-		else {
+
 			displayRegularQuote();
 			quoteUpTo++;
-			quoteType = "Neutral";
 		   	if(quoteUpTo > quotesList.size() -1) {
 				quoteUpTo = 0;
 			}	
-		}
 	}
 
 	private void displayPanel(JPanel nextQuotepanel) {
@@ -83,12 +71,6 @@ public class NextQuoteListener implements ActionListener{
 
 	private void displayRegularQuote() {
 		textLabel = new JLabel("<html>"+quotesList.get(quoteUpTo).toString()+"</html>",SwingConstants.CENTER);
-		textLabel.setFont(new Font("Magneto Bold", Font.BOLD,20));
-		textLabel.setPreferredSize(new Dimension(1000,100));
-		textLabel.setForeground(Color.pink);
-	}
-	private void displayLikeQuote() {
-		textLabel = new JLabel("<html>"+LikeListener.getLikeQuotes().get(likeQuoteUpTo).toString()+"</html>",SwingConstants.CENTER);
 		textLabel.setFont(new Font("Magneto Bold", Font.BOLD,20));
 		textLabel.setPreferredSize(new Dimension(1000,100));
 		textLabel.setForeground(Color.pink);
@@ -138,21 +120,21 @@ public class NextQuoteListener implements ActionListener{
 	public JLabel getTextLabel() {
 		return textLabel;
 	}
-	public static int getLikeQuoteUpTo() {
-		return likeQuoteUpTo;
-	}
+//	public static int getLikeQuoteUpTo() {
+//		return likeQuoteUpTo;
+//	}
 	public static void setQuoteUpTo(int q) {
 		quoteUpTo = q;
 	}
-	public static String getType() {
-		return quoteType;
-	}
-
-	public static void setLikeQuoteUpTo(int i) {
-		likeQuoteUpTo = i;
-	}
-	public static void setQuoteType(String type) {
-		quoteType = type;
-	}
+//	public static String getType() {
+//		return quoteType;
+//	}
+//
+//	public static void setLikeQuoteUpTo(int i) {
+//		likeQuoteUpTo = i;
+//	}
+//	public static void setQuoteType(String type) {
+//		quoteType = type;
+//	}
 
 }

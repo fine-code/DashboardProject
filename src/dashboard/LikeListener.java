@@ -8,30 +8,25 @@ import javax.swing.JButton;
 
 public class LikeListener implements ActionListener{
 	private JButton like;
-	private static ArrayList<Quote> likeQuotes = new ArrayList<>();
+	//private static ArrayList<Quote> likeQuotes = new ArrayList<>();
 	private static ArrayList<Quote> quotes;
 	private int quoteUpTo;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == like) {
-			likeQuotes.add(quotes.get(quoteUpTo - 1));
+			quotes.add(quotes.get(quoteUpTo - 1));
 		}
 	}
 	public void setLike(JButton like) {
 		this.like = like;
 	}
-	public static ArrayList<Quote> getLikeQuotes(){
-		return likeQuotes;
-	}
+
 	public void setQuoteUpTo(int quoteUpTo) {
 		this.quoteUpTo = quoteUpTo;
 	}
 	public void setQuotes(ArrayList<Quote> q) {
 		quotes = q;
-	}
-	public void setLikeQuotes(ArrayList<Quote> lq) {
-		likeQuotes = lq;
 	}
 
 }
