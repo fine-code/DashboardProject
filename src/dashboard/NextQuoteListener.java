@@ -15,36 +15,36 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class NextQuoteListener implements ActionListener{
+public class NextQuoteListener implements ActionListener {
 	private JButton nextQuote;
 	private JLabel textLabel;
 	private JFrame frame;
 	private static ArrayList<Quote> quotesList;
 	private static int quoteUpTo = 0;
-	//private static String quoteType = "";
-	//private static int likeQuoteUpTo = 0;
-	
+	// private static String quoteType = "";
+	// private static int likeQuoteUpTo = 0;
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == nextQuote) {
+		if (e.getSource() == nextQuote) {
 			JPanel nextQuotepanel = new JPanel();
-		    nextQuotepanel.setBackground(Color.gray);
-		    displayQuote();
-		    nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
-		   	    
-		    reactionButtons(nextQuotepanel);
-		    displayPanel(nextQuotepanel);
+			nextQuotepanel.setBackground(Color.gray);
+			displayQuote();
+			nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
+
+			reactionButtons(nextQuotepanel);
+			displayPanel(nextQuotepanel);
 		}
-		    
+
 	}
 
 	private void displayQuote() {
 
-			displayRegularQuote();
-			quoteUpTo++;
-		   	if(quoteUpTo > quotesList.size() -1) {
-				quoteUpTo = 0;
-			}	
+		displayRegularQuote();
+		quoteUpTo++;
+		if (quoteUpTo > quotesList.size() - 1) {
+			quoteUpTo = 0;
+		}
 	}
 
 	private void displayPanel(JPanel nextQuotepanel) {
@@ -55,24 +55,24 @@ public class NextQuoteListener implements ActionListener{
 	}
 
 	private void reactionButtons(JPanel nextQuotepanel) {
-		JButton like=new JButton("Like");
-		JButton dislike=new JButton("Dislike");
-		buttonStyles(like, dislike);	// dimensions where the button should go.
-		
+		JButton like = new JButton("Like");
+		JButton dislike = new JButton("Dislike");
+		buttonStyles(like, dislike); // dimensions where the button should go.
+
 		nextQuotepanel.add(like);
 		nextQuotepanel.add(dislike);
-		
+
 		DislikeListener dislikeClicked = dislikeAction(dislike);
 		LikeListener likeClicked = likeActions(like);
-		
+
 		like.addActionListener(likeClicked);
 		dislike.addActionListener(dislikeClicked);
 	}
 
 	private void displayRegularQuote() {
-		textLabel = new JLabel("<html>"+quotesList.get(quoteUpTo).toString()+"</html>",SwingConstants.CENTER);
-		textLabel.setFont(new Font("Magneto Bold", Font.BOLD,20));
-		textLabel.setPreferredSize(new Dimension(1000,100));
+		textLabel = new JLabel("<html>" + quotesList.get(quoteUpTo).toString() + "</html>", SwingConstants.CENTER);
+		textLabel.setFont(new Font("Magneto Bold", Font.BOLD, 20));
+		textLabel.setPreferredSize(new Dimension(1000, 100));
 		textLabel.setForeground(Color.pink);
 	}
 
@@ -86,9 +86,9 @@ public class NextQuoteListener implements ActionListener{
 
 	private void buttonStyles(JButton like, JButton dislike) {
 		like.setBackground(Color.pink);
-		like.setBounds(500,400,100,40);		//dimensions where the button should go 
+		like.setBounds(500, 400, 100, 40); // dimensions where the button should go
 		dislike.setBackground(Color.pink);
-		dislike.setBounds(800,400,100,40);
+		dislike.setBounds(800, 400, 100, 40);
 	}
 
 	private DislikeListener dislikeAction(JButton dislike) {
@@ -98,28 +98,35 @@ public class NextQuoteListener implements ActionListener{
 		dislikeClicked.setQuotes(quotesList);
 		return dislikeClicked;
 	}
-		
+
 	public void setNextQuote(JButton nextQuote) {
 		this.nextQuote = nextQuote;
 	}
+
 	public JButton getNextQuote() {
 		return nextQuote;
 	}
+
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}
+
 	public static void setQuotes(ArrayList<Quote> quotes) {
 		quotesList = quotes;
 	}
-	public ArrayList<Quote> getQuotes(){
+
+	public ArrayList<Quote> getQuotes() {
 		return quotesList;
 	}
+
 	public void setTextLabel(JLabel textLabel) {
 		this.textLabel = textLabel;
 	}
+
 	public JLabel getTextLabel() {
 		return textLabel;
 	}
+
 //	public static int getLikeQuoteUpTo() {
 //		return likeQuoteUpTo;
 //	}
