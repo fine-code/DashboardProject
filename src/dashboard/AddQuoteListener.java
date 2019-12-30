@@ -17,19 +17,12 @@ public class AddQuoteListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == addQuote) {
 
-//			String quote = "";
-//			String authorFname = "";
-//			String authorLname = "";
-			
 			JTextField quote = new JTextField();
 			JTextField authorFname = new JTextField();
 			JTextField authorLname = new JTextField();
-			
-			Object[] message = {
-			    "Quote:", quote,
-			    "Author's first name:", authorFname,
-			    "Author's last name:", authorLname
-			};
+
+			Object[] message = { "Quote:", quote, "Author's first name:", authorFname, "Author's last name:",
+					authorLname };
 			addQuote(quote, authorFname, authorLname, message);
 		}
 	}
@@ -38,12 +31,11 @@ public class AddQuoteListener implements ActionListener {
 		JOptionPane.showConfirmDialog(frame, message, "New Quote", JOptionPane.OK_CANCEL_OPTION);
 		String check = quote.getText() + authorFname.getText() + authorLname.getText();
 		Person author = new Person(authorFname.getText(), authorLname.getText());
-		Quote newQuote = new Quote(quote.getText(),author);
-		if(!quotes.contains(newQuote) && !check.equals("")) {
+		Quote newQuote = new Quote(quote.getText(), author);
+		if (!quotes.contains(newQuote) && !check.equals("")) {
 			quotes.add(newQuote);
 			JOptionPane.showMessageDialog(frame, "Quote added successfully");
-		}
-		else {
+		} else {
 			JOptionPane.showMessageDialog(frame, "Your quote was unable to be added");
 		}
 	}
