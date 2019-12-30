@@ -9,12 +9,12 @@ public class LikeListener implements ActionListener {
 	private JButton like;
 	// private static ArrayList<Quote> likeQuotes = new ArrayList<>();
 	private static ArrayList<Quote> quotes;
-	private int quoteUpTo;
+	private int quoteIndex;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == like) {
-			quotes.add(quotes.get(quoteUpTo - 1));
+			quotes.add(quotes.get(quoteIndex - 1));
 		}
 	}
 
@@ -22,8 +22,8 @@ public class LikeListener implements ActionListener {
 		this.like = like;
 	}
 
-	public void setQuoteUpTo(int quoteUpTo) {
-		this.quoteUpTo = quoteUpTo;
+	public void setQuoteIndex(int quoteUpTo) {
+		this.quoteIndex = quoteUpTo;
 	}
 
 	public void setQuotes(ArrayList<Quote> q) {

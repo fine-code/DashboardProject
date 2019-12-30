@@ -7,7 +7,7 @@ import javax.swing.JButton;
 
 public class DislikeListener implements ActionListener{
 	private JButton dislike;
-	private int quoteUpTo;
+	private int quoteIndex;
 	private ArrayList<Quote> quotes;
 	private ArrayList<Quote> likeQuotes;
 	
@@ -39,7 +39,7 @@ public class DislikeListener implements ActionListener{
 //				}
 //			} 
 //			else {
-			quotes.remove(quoteUpTo - 1);
+			quotes.remove(quoteIndex - 1);
 			
 //				if(quotes.size() == 1) {
 //					quotes.remove(quoteUpTo);
@@ -57,8 +57,8 @@ public class DislikeListener implements ActionListener{
 	public void setQuotes(ArrayList<Quote> quotes) {
 		this.quotes = quotes;
 	}
-	public void setQuoteUpTo(int quoteUpTo) {
-		this.quoteUpTo = quoteUpTo;
+	public void setQuoteIndex(int quoteIndex) {
+		this.quoteIndex = quoteIndex;
 	}
 	public void setLikeQuotes(ArrayList<Quote> likeQuotes) {
 		this.likeQuotes = likeQuotes;

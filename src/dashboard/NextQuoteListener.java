@@ -20,7 +20,7 @@ public class NextQuoteListener implements ActionListener {
 	private JLabel textLabel;
 	private JFrame frame;
 	private static ArrayList<Quote> quotesList;
-	private static int quoteUpTo = 0;
+	private static int quoteIndex = 0;
 	// private static String quoteType = "";
 	// private static int likeQuoteUpTo = 0;
 
@@ -41,9 +41,9 @@ public class NextQuoteListener implements ActionListener {
 	private void displayQuote() {
 
 		displayRegularQuote();
-		quoteUpTo++;
-		if (quoteUpTo > quotesList.size() - 1) {
-			quoteUpTo = 0;
+		quoteIndex++;
+		if (quoteIndex > quotesList.size() - 1) {
+			quoteIndex = 0;
 		}
 	}
 
@@ -70,7 +70,7 @@ public class NextQuoteListener implements ActionListener {
 	}
 
 	private void displayRegularQuote() {
-		textLabel = new JLabel("<html>" + quotesList.get(quoteUpTo).toString() + "</html>", SwingConstants.CENTER);
+		textLabel = new JLabel("<html>" + quotesList.get(quoteIndex).toString() + "</html>", SwingConstants.CENTER);
 		textLabel.setFont(new Font("Magneto Bold", Font.BOLD, 20));
 		textLabel.setPreferredSize(new Dimension(1000, 100));
 		textLabel.setForeground(Color.CYAN);
@@ -79,7 +79,7 @@ public class NextQuoteListener implements ActionListener {
 	private LikeListener likeActions(JButton like) {
 		LikeListener likeClicked = new LikeListener();
 		likeClicked.setLike(like);
-		likeClicked.setQuoteUpTo(quoteUpTo);
+		likeClicked.setQuoteIndex(quoteIndex);
 		likeClicked.setQuotes(quotesList);
 		return likeClicked;
 	}
@@ -94,7 +94,7 @@ public class NextQuoteListener implements ActionListener {
 	private DislikeListener dislikeAction(JButton dislike) {
 		DislikeListener dislikeClicked = new DislikeListener();
 		dislikeClicked.setDislike(dislike);
-		dislikeClicked.setQuoteUpTo(quoteUpTo);
+		dislikeClicked.setQuoteIndex(quoteIndex);
 		dislikeClicked.setQuotes(quotesList);
 		return dislikeClicked;
 	}
@@ -130,8 +130,8 @@ public class NextQuoteListener implements ActionListener {
 //	public static int getLikeQuoteUpTo() {
 //		return likeQuoteUpTo;
 //	}
-	public static void setQuoteUpTo(int q) {
-		quoteUpTo = q;
+	public static void setquoteIndex(int q) {
+		quoteIndex = q;
 	}
 //	public static String getType() {
 //		return quoteType;
