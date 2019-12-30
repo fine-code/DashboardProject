@@ -57,7 +57,6 @@ public class Window extends JFrame {
 
 		addQuoteAction.setQuotes(quotes);
 		addQuoteAction.setFrame(frame);
-		addQuoteAction.setAddQuote(addQuoteButton);
 		addQuoteButton.addActionListener(addQuoteAction);
 	}
 
@@ -66,7 +65,6 @@ public class Window extends JFrame {
 
 		NextQuoteListener.setQuotes(quotes);
 		quoteClicked.setFrame(frame);
-		quoteClicked.setNextQuote(nextQuoteButton);
 		nextQuoteButton.addActionListener(quoteClicked);
 	}
 
@@ -76,7 +74,6 @@ public class Window extends JFrame {
 
 		click.setQuotes(quotes);
 		click.setFrame(frame);
-		click.setDisplayQuoteButton(displayQuote);
 		displayQuote.addActionListener(click);
 	}
 

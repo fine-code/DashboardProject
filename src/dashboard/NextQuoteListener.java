@@ -7,8 +7,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Random;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class NextQuoteListener implements ActionListener {
-	private JButton nextQuote;
+
 	private JLabel textLabel;
 	private JFrame frame;
 	private static ArrayList<Quote> quotesList;
@@ -75,7 +73,6 @@ public class NextQuoteListener implements ActionListener {
 
 	private LikeListener likeActions(JButton like) {
 		LikeListener likeClicked = new LikeListener();
-		likeClicked.setLike(like);
 		likeClicked.setQuoteIndex(quoteIndex);
 		likeClicked.setQuotes(quotesList);
 		return likeClicked;
@@ -90,18 +87,9 @@ public class NextQuoteListener implements ActionListener {
 
 	private DislikeListener dislikeAction(JButton dislike) {
 		DislikeListener dislikeClicked = new DislikeListener();
-		dislikeClicked.setDislike(dislike);
 		dislikeClicked.setQuoteIndex(quoteIndex);
 		dislikeClicked.setQuotes(quotesList);
 		return dislikeClicked;
-	}
-
-	public void setNextQuote(JButton nextQuote) {
-		this.nextQuote = nextQuote;
-	}
-
-	public JButton getNextQuote() {
-		return nextQuote;
 	}
 
 	public void setFrame(JFrame frame) {

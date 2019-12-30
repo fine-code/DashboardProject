@@ -3,13 +3,11 @@ package dashboard;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JButton;
 
 public class DislikeListener implements ActionListener {
-	private JButton dislike;
+
 	private int quoteIndex;
 	private ArrayList<Quote> quotes;
-	private ArrayList<Quote> likeQuotes;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -49,20 +47,12 @@ public class DislikeListener implements ActionListener {
 //				}
 	}
 
-	public void setDislike(JButton dislike) {
-		this.dislike = dislike;
-	}
-
 	public void setQuotes(ArrayList<Quote> quotes) {
 		this.quotes = quotes;
 	}
 
 	public void setQuoteIndex(int quoteIndex) {
 		this.quoteIndex = quoteIndex;
-	}
-
-	public void setLikeQuotes(ArrayList<Quote> likeQuotes) {
-		this.likeQuotes = likeQuotes;
 	}
 
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 
 public class LikeListener implements ActionListener {
-	private JButton like;
+
 	// private static ArrayList<Quote> likeQuotes = new ArrayList<>();
 	private static ArrayList<Quote> quotes;
 	private int quoteIndex;
@@ -14,10 +14,6 @@ public class LikeListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		quotes.add(quotes.get(quoteIndex - 1));
-	}
-
-	public void setLike(JButton like) {
-		this.like = like;
 	}
 
 	public void setQuoteIndex(int quoteUpTo) {

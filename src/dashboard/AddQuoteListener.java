@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class AddQuoteListener implements ActionListener {
-	private JButton addQuote;
+	
 	private ArrayList<Quote> quotes;
 	private JFrame frame;
 
@@ -35,10 +35,6 @@ public class AddQuoteListener implements ActionListener {
 		} else {
 			JOptionPane.showMessageDialog(frame, "Your quote was unable to be added");
 		}
-	}
-
-	public void setAddQuote(JButton addQuote) {
-		this.addQuote = addQuote;
 	}
 
 	public void setQuotes(ArrayList<Quote> quotes) {
