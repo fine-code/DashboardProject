@@ -14,20 +14,20 @@ import java.awt.*;
 public class DisplayQuotesListener implements ActionListener{
 		
 		private JButton displayQuotes;
-		private static JPanel panel;
+		private JPanel panel;
 		private JFrame frame;
 		private ArrayList<Quote> quotes;
 	
 		@Override
 		public void actionPerformed(ActionEvent e){
-//			if (e.getSource() == displayQuotes){
+			if (e.getSource() == displayQuotes){
 				JTextArea text = new JTextArea();
 				for(Quote q : quotes){
 				    text.append(q + System.getProperty("line.separator"));
 				}
 				displayAllQuotes(text);
 				
-//			}
+			}
 		}
 
 		private void displayAllQuotes(JTextArea text) {
@@ -50,7 +50,7 @@ public class DisplayQuotesListener implements ActionListener{
 		public void setQuotes(ArrayList<Quote> quotes) {
 			this.quotes = quotes;
 		}
-		public static JPanel getPanel() {
+		public JPanel getPanel() {
 			return panel;
 		}
 		
