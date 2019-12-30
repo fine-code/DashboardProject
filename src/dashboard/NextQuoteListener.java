@@ -28,7 +28,7 @@ public class NextQuoteListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == nextQuote) {
 			JPanel nextQuotepanel = new JPanel();
-			nextQuotepanel.setBackground(Color.gray);
+			nextQuotepanel.setBackground(Color.black);
 			displayQuote();
 			nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
 
@@ -73,7 +73,7 @@ public class NextQuoteListener implements ActionListener {
 		textLabel = new JLabel("<html>" + quotesList.get(quoteUpTo).toString() + "</html>", SwingConstants.CENTER);
 		textLabel.setFont(new Font("Magneto Bold", Font.BOLD, 20));
 		textLabel.setPreferredSize(new Dimension(1000, 100));
-		textLabel.setForeground(Color.pink);
+		textLabel.setForeground(Color.CYAN);
 	}
 
 	private LikeListener likeActions(JButton like) {
@@ -85,9 +85,9 @@ public class NextQuoteListener implements ActionListener {
 	}
 
 	private void buttonStyles(JButton like, JButton dislike) {
-		like.setBackground(Color.pink);
+		like.setBackground(Color.cyan);
 		like.setBounds(500, 400, 100, 40); // dimensions where the button should go
-		dislike.setBackground(Color.pink);
+		dislike.setBackground(Color.cyan);
 		dislike.setBounds(800, 400, 100, 40);
 	}
 

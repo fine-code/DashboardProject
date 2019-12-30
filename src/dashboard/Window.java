@@ -40,8 +40,8 @@ public class Window extends JFrame {
 	private JFrame setUpFrame() {
 		JFrame frame = new JFrame("Inspirational Quotes");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setBackground(Color.pink);
-		frame.getRootPane().setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.yellow));
+		frame.getContentPane().setBackground(Color.black);
+		frame.getRootPane().setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.cyan));
 		return frame;
 	}
 
@@ -49,7 +49,7 @@ public class Window extends JFrame {
 		menuBar.add(nextQuote);
 		menuBar.add(displayQuote);
 		menuBar.add(addQuote);
-		menuBar.setBackground(Color.yellow);
+		menuBar.setBackground(Color.cyan);
 	}
 
 	private void addQuoteButtonActions(ArrayList<Quote> quotes, JFrame frame, JButton addQuoteButton) {

@@ -20,14 +20,14 @@ public class DisplayQuotesListener implements ActionListener{
 	
 		@Override
 		public void actionPerformed(ActionEvent e){
-			if (e.getSource() == displayQuotes){
+//			if (e.getSource() == displayQuotes){
 				JTextArea text = new JTextArea();
 				for(Quote q : quotes){
 				    text.append(q + System.getProperty("line.separator"));
 				}
 				displayAllQuotes(text);
 				
-			}
+//			}
 		}
 
 		private void displayAllQuotes(JTextArea text) {
@@ -35,7 +35,6 @@ public class DisplayQuotesListener implements ActionListener{
 			panel.add(text, BorderLayout.LINE_START);
 			frame.setContentPane(panel);
 			frame.pack();
-			frame.setLocationByPlatform(true);
 			panel.setVisible(true);
 		}
 		
