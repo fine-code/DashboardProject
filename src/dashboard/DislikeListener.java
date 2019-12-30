@@ -5,15 +5,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 
-public class DislikeListener implements ActionListener{
+public class DislikeListener implements ActionListener {
 	private JButton dislike;
 	private int quoteIndex;
 	private ArrayList<Quote> quotes;
 	private ArrayList<Quote> likeQuotes;
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == dislike) {
 //			//if it's a like quote than just remove it from the like list and still show it sometimes
 //			if(LikeListener.getLikeQuotes().size() != 0 && ((LikeListener.getLikeQuotes().contains(likeQuotes.get(NextQuoteListener.getLikeQuoteUpTo() - 1))&& NextQuoteListener.getType() == "like") 
 //					|| (LikeListener.getLikeQuotes().contains(quotes.get(quoteUpTo - 1))&& NextQuoteListener.getType() == "Neutral") )){
@@ -39,8 +38,8 @@ public class DislikeListener implements ActionListener{
 //				}
 //			} 
 //			else {
-			quotes.remove(quoteIndex - 1);
-			
+		quotes.remove(quoteIndex - 1);
+
 //				if(quotes.size() == 1) {
 //					quotes.remove(quoteUpTo);
 //				}
@@ -48,18 +47,20 @@ public class DislikeListener implements ActionListener{
 //					quotes.remove(quoteUpTo - 1);
 //					NextQuoteListener.setQuoteUpTo(quoteUpTo - 1);
 //				}
-			}
 	}
-	
+
 	public void setDislike(JButton dislike) {
 		this.dislike = dislike;
 	}
+
 	public void setQuotes(ArrayList<Quote> quotes) {
 		this.quotes = quotes;
 	}
+
 	public void setQuoteIndex(int quoteIndex) {
 		this.quoteIndex = quoteIndex;
 	}
+
 	public void setLikeQuotes(ArrayList<Quote> likeQuotes) {
 		this.likeQuotes = likeQuotes;
 	}

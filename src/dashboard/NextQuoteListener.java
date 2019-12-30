@@ -26,16 +26,13 @@ public class NextQuoteListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == nextQuote) {
-			JPanel nextQuotepanel = new JPanel();
-			nextQuotepanel.setBackground(Color.black);
-			displayQuote();
-			nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
+		JPanel nextQuotepanel = new JPanel();
+		nextQuotepanel.setBackground(Color.black);
+		displayQuote();
+		nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
 
-			reactionButtons(nextQuotepanel);
-			displayPanel(nextQuotepanel);
-		}
-
+		reactionButtons(nextQuotepanel);
+		displayPanel(nextQuotepanel);
 	}
 
 	private void displayQuote() {

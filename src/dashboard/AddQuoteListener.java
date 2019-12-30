@@ -15,16 +15,13 @@ public class AddQuoteListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == addQuote) {
 
-			JTextField quote = new JTextField();
-			JTextField authorFname = new JTextField();
-			JTextField authorLname = new JTextField();
+		JTextField quote = new JTextField();
+		JTextField authorFname = new JTextField();
+		JTextField authorLname = new JTextField();
 
-			Object[] message = { "Quote:", quote, "Author's first name:", authorFname, "Author's last name:",
-					authorLname };
-			addQuote(quote, authorFname, authorLname, message);
-		}
+		Object[] message = { "Quote:", quote, "Author's first name:", authorFname, "Author's last name:", authorLname };
+		addQuote(quote, authorFname, authorLname, message);
 	}
 
 	private void addQuote(JTextField quote, JTextField authorFname, JTextField authorLname, Object[] message) {

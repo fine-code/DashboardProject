@@ -13,9 +13,7 @@ public class LikeListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == like) {
-			quotes.add(quotes.get(quoteIndex - 1));
-		}
+		quotes.add(quotes.get(quoteIndex - 1));
 	}
 
 	public void setLike(JButton like) {
