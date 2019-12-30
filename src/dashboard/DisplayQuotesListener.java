@@ -35,7 +35,6 @@ public class DisplayQuotesListener implements ActionListener{
 			panel.add(text, BorderLayout.LINE_START);
 			frame.setContentPane(panel);
 			frame.pack();
-			panel.setVisible(true);
 		}
 		
 		public void setFrame(JFrame frame) {
