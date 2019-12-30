@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -16,27 +17,35 @@ public class AddQuoteListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == addQuote) {
 
-			String quote = "";
-			String authorFname = "";
-			String authorLname = "";
-
-			while (quote.isEmpty()) {
-				quote = JOptionPane.showInputDialog(frame, "Enter quote");
-			}
-			while (authorFname.isBlank()) {
-				authorFname = JOptionPane.showInputDialog(frame, "Enter author's first name");
-			}
-			while (authorLname.isBlank()) {
-				authorLname = JOptionPane.showInputDialog(frame, "Enter author's last name");
-			}
-			addQuote(quote, authorFname, authorLname);
+//			String quote = "";
+//			String authorFname = "";
+//			String authorLname = "";
+			
+			JTextField quote = new JTextField();
+			JTextField authorFname = new JTextField();
+			JTextField authorLname = new JTextField();
+			
+			Object[] message = {
+			    "Quote:", quote,
+			    "Author's first name:", authorFname,
+			    "Author's last name:", authorLname
+			};
+			addQuote(quote, authorFname, authorLname, message);
 		}
 	}
 
-	private void addQuote(String quote, String authorFname, String authorLname) {
-		Person author = new Person(authorFname, authorLname);
-		Quote newQuote = new Quote(quote, author);
-		quotes.add(newQuote);
+	private void addQuote(JTextField quote, JTextField authorFname, JTextField authorLname, Object[] message) {
+		JOptionPane.showConfirmDialog(frame, message, "New Quote", JOptionPane.OK_CANCEL_OPTION);
+		String check = quote.getText() + authorFname.getText() + authorLname.getText();
+		Person author = new Person(authorFname.getText(), authorLname.getText());
+		Quote newQuote = new Quote(quote.getText(),author);
+		if(!quotes.contains(newQuote) && !check.equals("")) {
+			quotes.add(newQuote);
+			JOptionPane.showMessageDialog(frame, "Quote added successfully");
+		}
+		else {
+			JOptionPane.showMessageDialog(frame, "Your quote was unable to be added");
+		}
 	}
 
 	public void setAddQuote(JButton addQuote) {
