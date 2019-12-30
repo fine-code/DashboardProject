@@ -44,9 +44,4 @@ public class DisplayQuotesListener implements ActionListener {
 	public void setQuotes(ArrayList<Quote> quotes) {
 		this.quotes = quotes;
 	}
-
-	public JPanel getPanel() {
-		return panel;
-	}
-
 }
