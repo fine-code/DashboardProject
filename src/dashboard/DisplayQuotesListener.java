@@ -37,10 +37,6 @@ public class DisplayQuotesListener implements ActionListener {
 		this.frame = frame;
 	}
 
-	public JFrame getFrame() {
-		return frame;
-	}
-
 	public void setDisplayQuoteButton(JButton displayQuotes) {
 		this.displayQuotes = displayQuotes;
 	}
