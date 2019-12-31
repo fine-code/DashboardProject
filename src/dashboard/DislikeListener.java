@@ -14,9 +14,9 @@ public class DislikeListener implements ActionListener {
 
 		if(quotes.size() == 1) {
 			quotes.remove(0);
-		}else if(quoteIndex == 0) {
+		}else if(quoteIndex == 0 && quotes.size() !=0) {
 			quotes.remove(quotes.size() - 1);
-		}else {
+		}else if(quotes.size() != 0){
 			quotes.remove(quoteIndex - 1);
 			NextQuoteListener.setquoteIndex(quoteIndex - 1);
 		}
