@@ -4,14 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
 public class DislikeListener implements ActionListener {
 
 	private int quoteIndex;
 	private ArrayList<Quote> quotes;
+	private JButton dislike;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
 		if(quotes.size() == 1) {
 			quotes.remove(0);
 		}else if(quoteIndex == 0 && quotes.size() !=0) {
@@ -20,6 +22,8 @@ public class DislikeListener implements ActionListener {
 			quotes.remove(quoteIndex - 1);
 			NextQuoteListener.setquoteIndex(quoteIndex - 1);
 		}
+		dislike.setEnabled(false);
+		
 	}
 
 	public void setQuotes(ArrayList<Quote> quotes) {
@@ -28,6 +32,9 @@ public class DislikeListener implements ActionListener {
 
 	public void setQuoteIndex(int quoteIndex) {
 		this.quoteIndex = quoteIndex;
+	}
+	public void setButton(JButton dislike) {
+		this.dislike = dislike;
 	}
 
 }

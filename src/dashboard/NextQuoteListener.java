@@ -19,18 +19,18 @@ public class NextQuoteListener implements ActionListener {
 	private JFrame frame;
 	private static ArrayList<Quote> quotesList;
 	private static int quoteIndex = 0;
-	// private static String quoteType = "";
-	// private static int likeQuoteUpTo = 0;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JPanel nextQuotepanel = new JPanel();
 		nextQuotepanel.setBackground(Color.black);
-		displayQuote();
-		nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
+		if(quotesList.size() != 0) {
+			displayQuote();
+			nextQuotepanel.add(textLabel, BorderLayout.LINE_START);
 
-		reactionButtons(nextQuotepanel);
-		displayPanel(nextQuotepanel);
+			reactionButtons(nextQuotepanel);
+			displayPanel(nextQuotepanel);
+		}
 	}
 
 	private void displayQuote() {
@@ -89,6 +89,7 @@ public class NextQuoteListener implements ActionListener {
 		DislikeListener dislikeClicked = new DislikeListener();
 		dislikeClicked.setQuoteIndex(quoteIndex);
 		dislikeClicked.setQuotes(quotesList);
+		dislikeClicked.setButton(dislike);
 		return dislikeClicked;
 	}
 
